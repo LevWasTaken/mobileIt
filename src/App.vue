@@ -1,5 +1,5 @@
 <template>
-  <ion-app>
+  <ion-app>         
     <ion-split-pane content-id="main">
       <ion-menu content-id="main" type="overlay">
         <ion-header>
@@ -13,12 +13,13 @@
             <ion-note>MobileIT</ion-note>
           </ion-list>
           <ion-list id="labels-list">
-            <ion-list-header>Labels</ion-list-header>
-            <ion-note>MobileIT</ion-note>
+            <ion-list-header @click="goToPipi">Prendre une photo 📷</ion-list-header>
           </ion-list>
         </ion-content>
       </ion-menu>
-      <ion-router-outlet id="main"></ion-router-outlet>
+      <ion-router-outlet id="main">
+        <router-view></router-view>
+      </ion-router-outlet>
       </ion-split-pane>
   </ion-app>
 </template>
@@ -27,6 +28,7 @@
 import {
   IonApp,
   IonContent,
+  IonHeader,
   IonIcon,
   IonItem,
   IonLabel,
@@ -37,6 +39,8 @@ import {
   IonNote,
   IonRouterOutlet,
   IonSplitPane,
+IonTitle,
+IonToolbar,
 } from '@ionic/vue';
 import { ref } from 'vue';
 import {
@@ -55,51 +59,21 @@ import {
   warningOutline,
   warningSharp,
 } from 'ionicons/icons';
+import router from './router';
 
 const selectedIndex = ref(0);
 const appPages = [
   {
-    title: 'Inbox',
-    url: '/folder/Inbox',
+    title: 'Home',
+    url: '/folder/Home',
     iosIcon: mailOutline,
     mdIcon: mailSharp,
-  },
-  {
-    title: 'Outbox',
-    url: '/folder/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp,
-  },
-  {
-    title: 'Favorites',
-    url: '/folder/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp,
-  },
-  {
-    title: 'Archived',
-    url: '/folder/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp,
-  },
-  {
-    title: 'Trash',
-    url: '/folder/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp,
-  },
-  {
-    title: 'Spam',
-    url: '/folder/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp,
-  },
+  }
 ];
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
-const path = window.location.pathname.split('folder/')[1];
-if (path !== undefined) {
-  selectedIndex.value = appPages.findIndex((page) => page.title.toLowerCase() === path.toLowerCase());
+const goToPipi = () => {
+  console.log('goToPipi');
+  router.push('/pipi');
 }
 </script>
 

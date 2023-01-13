@@ -9,7 +9,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/folder/:id',
     component: () => import ('../views/FolderPage.vue')
-  }
+  },
+  {
+    path: '/pipi',
+    component: () => import ('../views/PipiPage.vue')
+  },
 ]
 
 const router = createRouter({

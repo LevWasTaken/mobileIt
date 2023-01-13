@@ -10,7 +10,7 @@
     </ion-header>
     <ion-content>
       <ion-buttons>
-        <ion-button color="primary" expand="block" fill="outline" shape="round" size="large" @click="takePicture()">
+        <ion-button color="primary" expand="block" fill="outline" shape="round" size="large" @click="takePhoto()">
           <ion-icon slot="start" name="camera"></ion-icon>
           Prenez une photo
         </ion-button>
@@ -31,7 +31,8 @@ import {
   IonToolbar,
 } from "@ionic/vue";
 
-const takePicture = () => {
-  console.log("takePicture");
-};
+import { addNewToGallery } from '@/composables/addNewToGallery';
+
+const { takePhoto } = addNewToGallery();
+
 </script>

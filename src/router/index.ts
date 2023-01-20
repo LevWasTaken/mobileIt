@@ -3,17 +3,15 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '',
-    redirect: '/folder/Inbox'
+    path: '/puzzle',
+    name: 'PuzzlePage',
+    component: () => import('@/views/PuzzlePage.vue')
   },
   {
-    path: '/folder/:id',
-    component: () => import ('../views/FolderPage.vue')
-  },
-  {
-    path: '/pipi',
-    component: () => import ('../views/PipiPage.vue')
-  },
+    path: '/',
+    name: 'HomePage',
+    component: () => import('@/views/HomePage.vue')
+  }
 ]
 
 const router = createRouter({

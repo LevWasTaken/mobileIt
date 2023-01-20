@@ -1,81 +1,25 @@
 <template>
-  <ion-app>         
-    <ion-split-pane content-id="main">
-      <ion-menu content-id="main" type="overlay">
-        <ion-header>
-          <ion-toolbar>
-            <ion-title>Menu</ion-title>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content>
-          <ion-list id="inbox-list">
-            <ion-list-header>MobileIT</ion-list-header>
-            <ion-note>MobileIT</ion-note>
-          </ion-list>
-          <ion-list id="labels-list"> 
-            <ion-list-header @click="goToPipi">Prendre une photo 📷</ion-list-header>
-          </ion-list>
-        </ion-content>
-      </ion-menu>
-      <ion-router-outlet id="main">
-        <router-view></router-view>
-      </ion-router-outlet>
-      </ion-split-pane>
+  <ion-app>
+    <ion-router-outlet />
+    <HomePage></HomePage>
   </ion-app>
 </template>
 
-<script setup lang="ts">
-import {
-  IonApp,
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonListHeader,
-  IonMenu,
-  IonMenuToggle,
-  IonNote,
-  IonRouterOutlet,
-  IonSplitPane,
-IonTitle,
-IonToolbar,
-} from '@ionic/vue';
-import { ref } from 'vue';
-import {
-  archiveOutline,
-  archiveSharp,
-  bookmarkOutline,
-  bookmarkSharp,
-  heartOutline,
-  heartSharp,
-  mailOutline,
-  mailSharp,
-  paperPlaneOutline,
-  paperPlaneSharp,
-  trashOutline,
-  trashSharp,
-  warningOutline,
-  warningSharp,
-} from 'ionicons/icons';
-import router from './router';
+<script>
+import { IonApp, IonRouterOutlet } from '@ionic/vue';
+import HomePage from '@/views/HomePage.vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    IonApp,
+    IonRouterOutlet,
+    HomePage
+  },
+});
 
 
-const selectedIndex = ref(0);
-const appPages = [
-  {
-    title: 'Home',
-    url: '/folder/Home',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp,
-  }
-];
-
-const goToPipi = () => {
-  console.log('goToPipi');
-  router.push('/pipi');
-}
 </script>
 
   <style scoped>

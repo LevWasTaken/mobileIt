@@ -2,9 +2,14 @@ lockfileVersion: 5.4
 
 specifiers:
   '@capacitor/camera': ^4.1.4
+  '@capacitor/core': ^4.6.1
+  '@capacitor/filesystem': ^4.1.4
+  '@capacitor/preferences': ^4.0.2
+  '@ionic/pwa-elements': ^3.1.1
   '@ionic/vue': ^6.0.0
   '@ionic/vue-router': ^6.0.0
   '@types/jest': ^27.0.2
+  '@types/node': ^18.11.18
   '@typescript-eslint/eslint-plugin': ^5.6.0
   '@typescript-eslint/parser': ^5.6.0
   '@vue/cli-plugin-babel': ~5.0.0-rc.1
@@ -30,7 +35,11 @@ specifiers:
   vue-router: ^4.0.12
 
 dependencies:
-  '@capacitor/camera': 4.1.4
+  '@capacitor/camera': 4.1.4_@capacitor+core@4.6.2
+  '@capacitor/core': 4.6.2
+  '@capacitor/filesystem': 4.1.4_@capacitor+core@4.6.2
+  '@capacitor/preferences': 4.0.2_@capacitor+core@4.6.2
+  '@ionic/pwa-elements': 3.1.1
   '@ionic/vue': 6.4.2
   '@ionic/vue-router': 6.4.2
   core-js: 3.27.1
@@ -40,14 +49,15 @@ dependencies:
 
 devDependencies:
   '@types/jest': 27.5.2
+  '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.48.1_3jon24igvnqaqexgwtxk6nkpse
   '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
-  '@vue/cli-plugin-babel': 5.0.8_ztq44ko2lhov3gygcx3m3fbrkm
+  '@vue/cli-plugin-babel': 5.0.8_zv3r53khrgh7vuaklrzhzxuxhq
   '@vue/cli-plugin-e2e-cypress': 5.0.8_tu4lce72jcb5jirwdzwrpiitu4
   '@vue/cli-plugin-eslint': 5.0.8_5ckrcaw3wopmf52xijrts44y7a
   '@vue/cli-plugin-router': 5.0.8_@vue+cli-service@5.0.8
   '@vue/cli-plugin-typescript': 5.0.8_dwegkdannn47vph4tkuhnk7jcy
-  '@vue/cli-plugin-unit-jest': 5.0.8_bhdsjssneoccgntrvikjfckzre
+  '@vue/cli-plugin-unit-jest': 5.0.8_u3363d3n2hlivnpkvdcdhgu3le
   '@vue/cli-service': 5.0.8_vue@3.2.45
   '@vue/eslint-config-typescript': 11.0.2_r2ofcm3a3mosf6mtxm5d53nciq
   '@vue/test-utils': 2.2.7_vue@3.2.45
@@ -1424,10 +1434,34 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@capacitor/camera/4.1.4:
+  /@capacitor/camera/4.1.4_@capacitor+core@4.6.2:
     resolution: {integrity: sha512-7f4n7PlnstYsdGyxc0Kc4hIyS6csFLOjXvffm7pJsuy9pSo+kfdOPdYgGg360QwbUAmA+Yv+J1ZW1eFIwgvWrQ==}
     peerDependencies:
       '@capacitor/core': ^4.0.0
+    dependencies:
+      '@capacitor/core': 4.6.2
+    dev: false
+
+  /@capacitor/core/4.6.2:
+    resolution: {integrity: sha512-M/KpAg+peft/HTb7svLiKHxjbll67ybs1vEqhZuvjXlwro53NxNXR4YJS7+wNXZSiA4Kxjtf+a754xGgZcMarA==}
+    dependencies:
+      tslib: 2.4.1
+    dev: false
+
+  /@capacitor/filesystem/4.1.4_@capacitor+core@4.6.2:
+    resolution: {integrity: sha512-ivko1RNK4hq63xhMacq8D6D97N5/SAafTsrmY/pghYrG6Cl2SEY0+IgRu7V9/VWeN3FSplyUPucjUTAFQxXN5g==}
+    peerDependencies:
+      '@capacitor/core': ^4.0.0
+    dependencies:
+      '@capacitor/core': 4.6.2
+    dev: false
+
+  /@capacitor/preferences/4.0.2_@capacitor+core@4.6.2:
+    resolution: {integrity: sha512-HgcRkMdVHSIV3TeQLZFmCaCeMWQ25wLyZZ7dA2f8Rw81Q1Nroxsi7HxTEGNqrWKSN9PNKBJD8vChr6eB2GNtZg==}
+    peerDependencies:
+      '@capacitor/core': ^4.0.0
+    dependencies:
+      '@capacitor/core': 4.6.2
     dev: false
 
   /@colors/colors/1.5.0:
@@ -1523,6 +1557,10 @@ packages:
       '@stencil/core': 2.21.0
       ionicons: 6.0.4
       tslib: 2.4.1
+    dev: false
+
+  /@ionic/pwa-elements/3.1.1:
+    resolution: {integrity: sha512-BoEX1pSrKn5dP4VQwaf8DweAmT4ynmpW+9f6oj/W1xLe54bmuXcUY07ziuZX1DLu50xHSYcO5qJ/dbYC/w6wgA==}
     dev: false
 
   /@ionic/vue-router/6.4.2:
@@ -2180,7 +2218,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 14.18.36
+      '@types/node': 18.11.18
     dev: true
     optional: true
 
@@ -2352,10 +2390,9 @@ packages:
       svg-tags: 1.0.0
     dev: true
 
-  /@vue/babel-preset-app/5.0.8_core-js@3.27.1+vue@3.2.45:
+  /@vue/babel-preset-app/5.0.8_vue@3.2.45:
     resolution: {integrity: sha512-yl+5qhpjd8e1G4cMXfORkkBlvtPCIgmRf3IYCWYDKIQ7m+PPa5iTm4feiNmCMD6yGqQWMhhK/7M3oWGL9boKwg==}
     peerDependencies:
-      core-js: ^3
       vue: ^2 || ^3.2.13
     peerDependenciesMeta:
       core-js:
@@ -2470,13 +2507,13 @@ packages:
     resolution: {integrity: sha512-KmtievE/B4kcXp6SuM2gzsnSd8WebkQpg3XaB6GmFh1BJGRqa1UiW9up7L/Q67uOdTigHxr5Ar2lZms4RcDjwQ==}
     dev: true
 
-  /@vue/cli-plugin-babel/5.0.8_ztq44ko2lhov3gygcx3m3fbrkm:
+  /@vue/cli-plugin-babel/5.0.8_zv3r53khrgh7vuaklrzhzxuxhq:
     resolution: {integrity: sha512-a4qqkml3FAJ3auqB2kN2EMPocb/iu0ykeELwed+9B1c1nQ1HKgslKMHMPavYx3Cd/QAx2mBD4hwKBqZXEI/CsQ==}
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0 || ^5.0.0-0
     dependencies:
       '@babel/core': 7.20.12
-      '@vue/babel-preset-app': 5.0.8_core-js@3.27.1+vue@3.2.45
+      '@vue/babel-preset-app': 5.0.8_vue@3.2.45
       '@vue/cli-service': 5.0.8_vue@3.2.45
       '@vue/cli-shared-utils': 5.0.8
       babel-loader: 8.3.0_la66t7xldg4uecmyawueag5wkm
@@ -2484,7 +2521,6 @@ packages:
       webpack: 5.75.0
     transitivePeerDependencies:
       - '@swc/core'
-      - core-js
       - encoding
       - esbuild
       - supports-color
@@ -2576,13 +2612,12 @@ packages:
       - webpack-cli
     dev: true
 
-  /@vue/cli-plugin-unit-jest/5.0.8_bhdsjssneoccgntrvikjfckzre:
+  /@vue/cli-plugin-unit-jest/5.0.8_u3363d3n2hlivnpkvdcdhgu3le:
     resolution: {integrity: sha512-8aTmXUxEUdhJEjMHHoHI1wgi2SHzVRgCQQWIn5lgCAV2xJnXng09+wv8Ap0dhO4Z5vOOA/7xnubMQ9pDLqiskg==}
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0 || ^5.0.0-0
       '@vue/vue2-jest': ^27.0.0-alpha.3
       '@vue/vue3-jest': ^27.0.0-alpha.3
-      jest: ^27.1.0
       ts-jest: ^27.0.4
     peerDependenciesMeta:
       '@vue/vue2-jest':
@@ -2606,8 +2641,13 @@ packages:
       jest-watch-typeahead: 1.1.0_jest@27.5.1
       ts-jest: 27.1.5_gxqwwvgyfj3j363yya5hvnklam
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - encoding
+      - node-notifier
       - supports-color
+      - ts-node
+      - utf-8-validate
     dev: true
 
   /@vue/cli-plugin-vuex/5.0.8_@vue+cli-service@5.0.8:

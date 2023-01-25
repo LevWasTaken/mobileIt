@@ -17,57 +17,30 @@
             <ion-icon :icon="camera"></ion-icon>
             </ion-fab-button>
         </ion-fab>
+        <PuzzlePage v-if="photo" :photo="photo" />
     </ion-content>
 
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+
+
+<script setup lang="ts">
 import { 
     IonHeader, IonToolbar, IonTitle, IonContent, IonFab, 
     IonFabButton, IonCardContent, IonIcon, IonCard 
 } from '@ionic/vue';
 import { photoHandler } from '@/composables/photoHandler';
 import { camera } from 'ionicons/icons';
-import { useRouter } from 'vue-router';
+import PuzzlePage from '@/views/PuzzlePage.vue';
+import { ref } from 'vue';
 
-export default defineComponent({
-    name: 'HomePage',
-    components: {
-        IonHeader, 
-        IonToolbar, 
-        IonTitle,
-        IonContent,
-        IonFab, 
-        IonFabButton, 
-        IonIcon,
-        IonCard,
-        IonCardContent
-    },
-    methods: {
-        async takePhotoProcess() {
-            const photo = await this.takePhoto();
-            console.log(photo);
-            this.router.push({name: 'PuzzlePage', params: { photo: photo }})
-        }
-    },
-    setup() {
-        const {takePhoto} = photoHandler();
-        const router = useRouter();
-        return { router, takePhoto, camera };
-    },
-});
+const {takePhoto} = photoHandler();
+
+const photo = ref();
+
+const takePhotoProcess = async () => {
+    photo.value = await takePhoto();
+    }
+
+
 </script>
-
-<style>
-    ion-title {
-        text-align: center;
-    }
-    ion-fab {
-        padding-bottom: 5rem;
-    }
-    ion-card {
-        margin-top: 10rem;
-        text-align: center;
-    }
-</style>
